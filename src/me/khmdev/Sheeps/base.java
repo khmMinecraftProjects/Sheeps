@@ -2,11 +2,13 @@ package me.khmdev.Sheeps;
 
 import me.khmdev.API.API;
 import me.khmdev.API.Games.APIG;
+import me.khmdev.Sheeps.Game.GameSheeps;
 
 
 public class base {
 	APIG apig;
 	API api;
+	private GameSheeps game;
 
 	public base(init plug){
 
@@ -14,7 +16,8 @@ public class base {
 		api = API.getInstance();
 
 		apig = APIG.getInstance();
-		//apig.newGame(g);
+		game=new GameSheeps(api);
+		apig.newGame(game);
 
 	}
 
