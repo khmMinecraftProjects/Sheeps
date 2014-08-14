@@ -1,7 +1,7 @@
 package me.khmdev.Sheeps;
 
-import me.khmdev.API.API;
-import me.khmdev.API.Games.APIG;
+import me.khmdev.APIBase.API;
+import me.khmdev.APIGames.APIG;
 import me.khmdev.Sheeps.Game.GameSheeps;
 
 
@@ -12,7 +12,6 @@ public class base {
 
 	public base(init plug){
 
-		Kits.init();
 		api = API.getInstance();
 
 		apig = APIG.getInstance();

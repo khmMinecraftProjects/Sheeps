@@ -15,6 +15,7 @@ public class init extends JavaPlugin{
 			setEnabled(false);
 			return;
 		}
+		
 		base=new base(this);
 	}
 	private static boolean hasPluging(String s) {
