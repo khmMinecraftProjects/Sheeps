@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.bukkit.DyeColor;
 import org.bukkit.Location;
+import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Sheep;
@@ -42,6 +43,11 @@ public class PartidaSheeps extends PartidaEquipos4 {
 		super.finalizar();
 		num = 1;
 	}
+	private long randomNum(long num2) {
+		num2=(int) (Math.random()*num2);
+		if(num2==0){num2++;num2=1;}
+		return num2<1?1:num2;
+	}
 
 	@SuppressWarnings("deprecation")
 	public void Equipar(Jugador j) {
@@ -69,7 +75,7 @@ public class PartidaSheeps extends PartidaEquipos4 {
 		if (getTimeNextSheep() == 0) {
 			last = System.currentTimeMillis();
 			// num++;
-			for (int i = 0; i < num; i++) {
+			for (int i = 0; i < randomNum(num); i++) {
 				Location l = getRandomSpawn();
 				spawnSheep(DyeColor.WHITE, l, "",false);
 			}
@@ -354,6 +360,20 @@ public class PartidaSheeps extends PartidaEquipos4 {
 				.replace("%Team%", rob.name));
 		p.setColor(lad.dye);
 		return p;*/
+	}
+	@Override
+	public void cargaConf(ConfigurationSection section) {
+		if(section.isInt("tiempo_spawneo_sheeps")){
+			respawn=section.getInt("tiempo_spawneo_sheeps")*1000;
+		}else{
+			section.set("tiempo_spawneo_sheeps", respawn/1000);
+		}
+		if(section.isInt("numero_sheeps")){
+			num=section.getInt("numero_sheeps");
+		}else{
+			section.set("numero_sheeps", num);
+		}
+		super.cargaConf(section);
 	}
 
 }
