@@ -52,7 +52,6 @@ public class Azada extends CustomItem {
 
 			@Override
 			public void run() {
-				System.out.println(anv.getVelocity());
 
 				if (anv.getVelocity().equals(new Vector(0, 0, 0))) {
 					if (i == 0) {

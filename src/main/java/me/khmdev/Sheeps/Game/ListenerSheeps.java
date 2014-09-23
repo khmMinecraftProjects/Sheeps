@@ -6,7 +6,6 @@ import me.khmdev.APIGames.Partidas.Partida;
 
 import org.bukkit.DyeColor;
 import org.bukkit.entity.Entity;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Sheep;
 import org.bukkit.event.EventHandler;
@@ -33,14 +32,7 @@ public class ListenerSheeps extends ListenerGames implements Listener {
 		}
 	}
 
-	@EventHandler
-	public void Asegurar(EntityDeathEvent event) {
-		System.out.println(event.getEntity());
-		if(event.getEntityType()==EntityType.SHEEP){
-			System.out.println("DEATH SHEEP "
-		+event.getEntity().getCustomName());
-		}
-	}
+	
 	@Override
 	protected void spawn(Jugador j, PlayerRespawnEvent event) {
 		Partida p =  (Partida) j.getPartida();

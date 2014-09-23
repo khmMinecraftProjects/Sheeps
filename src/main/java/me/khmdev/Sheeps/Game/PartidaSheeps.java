@@ -16,7 +16,7 @@ import me.khmdev.APIAuxiliar.Inventory.StandarInventorys;
 import me.khmdev.APIBase.API;
 
 import me.khmdev.APIBase.Almacenes.Almacen;
-import me.khmdev.APIBase.Almacenes.LocAlmacen;
+import me.khmdev.APIBase.Almacenes.local.LocAlmacen;
 import me.khmdev.APIGames.Auxiliar.Control;
 import me.khmdev.APIGames.Auxiliar.EquipoVar;
 import me.khmdev.APIGames.Auxiliar.Jugador;
